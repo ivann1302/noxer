@@ -1,0 +1,28 @@
+// Breakpoints
+$breakpoints: (
+  'mobile-small': 360px,
+  'mobile': 425px,
+  'tablet': 600px,
+  'desktop': 1024px
+);
+
+// Colors
+$color-primary: #333;
+$color-secondary: #666;
+$color-background: #F1F1F1;
+$color-text: #333;
+
+// Typography
+$font-family-base: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Spacing
+$spacing-unit: 8px;
+$spacing-small: $spacing-unit;
+$spacing-medium: $spacing-unit * 2;
+$spacing-large: $spacing-unit * 3;
+
+// Container
+$container-max-width: 1200px;
+$container-padding: 5px;

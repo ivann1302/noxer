@@ -1,0 +1,72 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+@use 'sass:math';
+
+.container {
+  @include mix.container;
+
+  &--fluid {
+    max-width: 100%;
+  }
+
+  &--narrow {
+    max-width: 800px;
+  }
+}
+
+// Responsive grid system
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{vars.$spacing-medium};
+  margin-right: -#{vars.$spacing-medium};
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  > * {
+    padding-left: vars.$spacing-medium;
+    padding-right: vars.$spacing-medium;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+// Column classes for different breakpoints
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: math.percentage(math.div($i, 12));
+  }
+}
+
+@include mix.respond-to('mobile-small') {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+}
+
+@include mix.respond-to('mobile') {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+}
+
+@include mix.respond-to('tablet') {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+}
+
+@include mix.respond-to('desktop') {
+  @for $i from 1 through 12 {
+    .col-xl-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+}

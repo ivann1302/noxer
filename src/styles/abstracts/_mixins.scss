@@ -1,0 +1,49 @@
+// Import variables
+@use 'variables' as vars;
+@use 'sass:map';
+
+// Media query mixins
+@mixin respond-to($breakpoint) {
+  @if map.has-key(vars.$breakpoints, $breakpoint) {
+    @media (min-width: map.get(vars.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint: #{$breakpoint}. Available breakpoints are: #{map-keys(vars.$breakpoints)}";
+  }
+}
+
+// Container mixin
+@mixin container {
+  width: 100%;
+  max-width: vars.$container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: vars.$container-padding;
+  padding-right: vars.$container-padding;
+  box-sizing: border-box;
+}
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+// Grid mixins
+@mixin grid($columns: 12, $gap: vars.$spacing-medium) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}

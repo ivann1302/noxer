@@ -1,0 +1,210 @@
+@use '../../styles/abstracts/variables' as vars;
+@use '../../styles/abstracts/mixins' as mix;
+
+.topNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 10px); // Account for 5px margin on each side
+  max-width: calc(100% - 10px); // Ensure it doesn't exceed the width of its container
+  margin: 21px 5px 10px 5px; // 5px margin on left and right
+  box-sizing: border-box;
+
+  // Ensure elements don't overflow on small screens
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 17px;
+  background-color: rgba(198, 198, 198, 0.3); // #C6C6C64D
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+
+  .closeIcon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .closeText {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #666666;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 17px; /* Match the height of the icon */
+    margin: 0; /* Remove any default margin */
+    vertical-align: middle; /* Ensure perfect vertical centering */
+  }
+}
+
+.telegramLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 3px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  text-decoration: none;
+
+  .telegramIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .telegramText {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 105%;
+    letter-spacing: 0;
+    color: #292928;
+  }
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 17px;
+  background-color: rgba(198, 198, 198, 0.3); // #C6C6C64D
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+
+  .downArrowIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .threeDotsIcon {
+    width: 13.5px;
+    height: 7px;
+  }
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 17px;
+  background-color: rgba(198, 198, 198, 0.3); // #C6C6C64D
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+
+  .backArrowIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .backText {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #666666;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 12px; /* Match the height of the icon */
+    margin: 0; /* Remove any default margin */
+    vertical-align: middle; /* Ensure perfect vertical centering */
+  }
+}
+
+// Media queries for responsive design
+// For screens 600px and above
+@media (min-width: 600px) {
+  .topNavigation {
+    gap: 10px;
+  }
+
+  .closeButton, .backButton, .menuButton {
+    padding: 11px 17px;
+  }
+}
+
+// For screens between 360px and 599px
+@media (min-width: 360px) and (max-width: 599px) {
+  .topNavigation {
+    gap: 5px;
+  }
+
+  .closeButton, .backButton, .menuButton {
+    padding: 8px 12px;
+    gap: 4px;
+  }
+
+  .telegramLink {
+    padding: 7px 2px;
+    gap: 4px;
+  }
+
+  .telegramText {
+    font-size: 12px;
+  }
+}
+
+// For screens 359px and below
+@media (max-width: 359px) {
+  .topNavigation {
+    gap: 3px;
+  }
+
+  .closeButton, .backButton, .menuButton {
+    padding: 5px 6px;
+    gap: 2px;
+  }
+
+  .telegramLink {
+    padding: 5px 2px;
+    gap: 2px;
+  }
+
+  .telegramText {
+    font-size: 10px;
+  }
+
+  .closeText, .backText {
+    font-size: 9px;
+  }
+}
+
+// For screens 245px and below (extremely small screens)
+@media (max-width: 245px) {
+  .topNavigation {
+    gap: 2px;
+  }
+
+  .closeButton, .backButton, .menuButton {
+    padding: 4px 5px;
+    gap: 2px;
+  }
+
+  .telegramLink {
+    padding: 4px 1px;
+    gap: 1px;
+  }
+
+  .telegramText {
+    font-size: 9px;
+  }
+
+  .closeText, .backText {
+    font-size: 8px;
+  }
+}

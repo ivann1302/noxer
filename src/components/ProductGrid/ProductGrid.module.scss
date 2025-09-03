@@ -1,0 +1,48 @@
+@use '../../styles/abstracts/variables' as vars;
+@use '../../styles/abstracts/mixins' as mix;
+
+.productGrid {
+  display: grid;
+  gap: 5px;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+
+  // Default (smallest screens): 1 column
+  grid-template-columns: 1fr;
+
+  // Mobile small (360px+): 2 columns
+  @media (min-width: 360px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  // Tablet (600px+): 3 columns
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.noProducts {
+  text-align: center;
+  padding: 40px 0;
+  grid-column: 1 / -1;
+  color: vars.$color-secondary;
+  font-size: 18px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px 0;
+  grid-column: 1 / -1;
+  color: vars.$color-secondary;
+  font-size: 18px;
+}

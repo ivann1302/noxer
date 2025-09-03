@@ -1,0 +1,66 @@
+.categoryScrollContainer {
+  width: 98%;
+  margin: 10px auto;
+  position: relative;
+}
+
+.categoryScroll {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  padding: 10px 0;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px;
+  flex-shrink: 0;
+}
+
+.imageContainer {
+  width: 114px;
+  height: 114px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.categoryName {
+  margin-top: 3px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 110%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #292928;
+}
+
+
+/* Responsive scaling for smaller screens */
+@media (max-width: 600px) {
+  .imageContainer {
+    width: 90px;
+    height: 90px;
+  }
+
+  .categoryName {
+    font-size: 12px;
+  }
+}

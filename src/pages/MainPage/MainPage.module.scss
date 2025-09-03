@@ -1,0 +1,115 @@
+@use '../../styles/abstracts/variables' as vars;
+@use '../../styles/abstracts/mixins' as mix;
+
+.mainPage {
+  padding: 5px 0;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.banner {
+  width: 98%;
+  margin: 15px auto 10px auto;
+  display: block;
+  max-width: 98%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.container {
+  @include mix.container;
+}
+
+.content {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+.sidebar {
+  display: none;
+}
+
+.main {
+  order: 0;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.mobileFiltersToggle {
+  display: none;
+}
+
+.mobileFilters {
+  display: none;
+}
+
+.popularSearchesContainer {
+  display: none;
+}
+
+.popularSearchesTitle {
+  display: none;
+}
+
+.popularSearches {
+  display: none;
+}
+
+.popularSearchTag {
+  display: none;
+}
+
+.searchResultsCount {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.searchResultsOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 100;
+  overflow-y: auto;
+  padding: 60px 16px 16px;
+  display: none;
+}
+
+.searchResultsOverlay.visible {
+  display: block;
+}
+
+@include mix.respond-to('mobile-small') {
+  .mainPage {
+    padding: 5px 0;
+  }
+
+  .content {
+    gap: 16px;
+  }
+}
+
+@include mix.respond-to('tablet') {
+  .content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 100%;
+  }
+}

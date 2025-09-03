@@ -1,0 +1,61 @@
+@use '../../styles/abstracts/variables' as vars;
+@use '../../styles/abstracts/mixins' as mix;
+
+.header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  @include mix.container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: vars.$color-primary;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.navLink {
+  color: vars.$color-text;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: vars.$color-primary;
+    text-decoration: none;
+  }
+}
+
+// Responsive styles
+@include mix.respond-to('mobile-small') {
+  .header {
+    padding: 12px 0;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  .nav {
+    gap: 16px;
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inter Font Test</title>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('./Inter-Regular.woff2') format('woff2'),
+           url('./Inter-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      src: url('./Inter-Medium.woff2') format('woff2'),
+           url('./Inter-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      src: url('./Inter-Bold.woff2') format('woff2'),
+           url('./Inter-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-weight: 700; /* Bold */
+      margin-bottom: 30px;
+    }
+
+    .font-regular {
+      font-weight: 400; /* Regular */
+    }
+
+    .font-medium {
+      font-weight: 500; /* Medium */
+    }
+
+    .font-bold {
+      font-weight: 700; /* Bold */
+    }
+
+    .sample {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .label {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inter Font Test</h1>
+  
+  <div class="sample">
+    <div class="label">Regular (400)</div>
+    <p class="font-regular">
+      This text is using Inter Regular (400). The quick brown fox jumps over the lazy dog.
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
+    </p>
+  </div>
+
+  <div class="sample">
+    <div class="label">Medium (500)</div>
+    <p class="font-medium">
+      This text is using Inter Medium (500). The quick brown fox jumps over the lazy dog.
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
+    </p>
+  </div>
+
+  <div class="sample">
+    <div class="label">Bold (700)</div>
+    <p class="font-bold">
+      This text is using Inter Bold (700). The quick brown fox jumps over the lazy dog.
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
+    </p>
+  </div>
+
+  <div class="sample">
+    <div class="label">Mixed weights</div>
+    <p>
+      This paragraph uses <span class="font-regular">regular</span>, 
+      <span class="font-medium">medium</span>, and 
+      <span class="font-bold">bold</span> weights in the same text.
+    </p>
+  </div>
+
+  <p>
+    If you can see this page with the Inter font in different weights, 
+    it means the font files are correctly installed and working.
+  </p>
+</body>
+</html>

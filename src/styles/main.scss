@@ -1,0 +1,22 @@
+// Import base styles
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/fonts';
+
+// Import layout styles
+@use 'layout/container';
+
+// Import any component styles
+// @use 'components/button';
+// @use 'components/card';
+// etc.
+
+// Global styles
+@use 'abstracts/variables' as vars;
+
+body {
+  background-color: vars.$color-background;
+  overflow-x: hidden; // Prevent horizontal scrolling
+}
+
+// Any additional global styles can be added here

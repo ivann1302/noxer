@@ -1,0 +1,7 @@
+@use './styles/abstracts/variables' as vars;
+@use './styles/abstracts/mixins' as mix;
+
+.app {
+  // Empty container
+  min-height: 100vh;
+}

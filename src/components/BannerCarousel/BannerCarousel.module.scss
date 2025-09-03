@@ -1,0 +1,56 @@
+.carouselContainer {
+  position: relative;
+  width: 98%;
+  margin: 15px auto 10px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carousel {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.slidesContainer {
+  display: flex;
+  width: 300%; /* 100% * 3 slides */
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  width: 33.333%; /* 100% / 3 slides */
+  flex-shrink: 0;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+.dotsContainer {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cccccc; /* Light gray for inactive dots */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: #444444; /* Dark gray for active dot */
+}
