@@ -1,4 +1,5 @@
-import { FC, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import type { FC } from 'react';
 import styles from './BannerCarousel.module.scss';
 import bannerImage from '../../assets/images/bunner.png';
 

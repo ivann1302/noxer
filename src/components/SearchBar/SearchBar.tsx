@@ -2,9 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import type { FC, FormEvent } from 'react';
 import styles from './SearchBar.module.scss';
 import searchIcon from '../../assets/icons/searchIcon.svg';
-import { searchProducts, fetchProducts } from '../../services/api';
+import { searchProducts } from '../../services/api';
 import type { Product } from '../../types/product';
-import ProductCard from '../ProductCard';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -39,7 +38,7 @@ export const SearchBar: FC<SearchBarProps> = ({
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [isTyping, setIsTyping] = useState(false);
   const [searchResults, setSearchResults] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const [showGoButton, setShowGoButton] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -134,11 +133,6 @@ export const SearchBar: FC<SearchBarProps> = ({
     }
   };
 
-  const handlePopularSearch = (query: string) => {
-    setSearchQuery(query);
-    onSearch(query);
-    setIsTyping(false);
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -351,13 +345,19 @@ export const SearchBar: FC<SearchBarProps> = ({
           )}
         </form>
 
-        {isTyping && searchResults.length > 0 && (
+        {isTyping && (
           <div className={styles.searchResults}>
-            {searchResults.map((product) => (
-              <div key={product.Product_ID} className={styles.searchResultItem}>
-                <SearchResultCard product={product} />
-              </div>
-            ))}
+            {isLoading ? (
+              <div className={styles.loadingIndicator}>Загрузка...</div>
+            ) : searchResults.length > 0 ? (
+              searchResults.map((product) => (
+                <div key={product.Product_ID} className={styles.searchResultItem}>
+                  <SearchResultCard product={product} />
+                </div>
+              ))
+            ) : (
+              searchQuery.length > 0 && <div className={styles.noResults}>Ничего не найдено</div>
+            )}
           </div>
         )}
       </div>

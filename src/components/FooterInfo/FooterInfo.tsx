@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import styles from './FooterInfo.module.scss';
 import telegramIcon from '../../assets/icons/telegram.svg';
 

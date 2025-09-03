@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import styles from './TopNavigation.module.scss';
 
 import closeIcon from '../../assets/icons/topNavIcons/closeIcon.svg';

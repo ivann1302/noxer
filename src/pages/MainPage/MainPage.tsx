@@ -75,7 +75,7 @@ export const MainPage: FC = () => {
           popularSearches={POPULAR_SEARCHES}
           onTypingChange={handleTypingChange}
           isTypingExternal={isTyping}
-          onDirectSearch={(query, products) => {
+          onDirectSearch={(query) => {
             searchProducts(query);
           }}
         />
@@ -87,7 +87,7 @@ export const MainPage: FC = () => {
 
             {!isSearchResults && (
               <>
-                <ProductGrid products={products} loading={loading} />
+                <ProductGrid products={mainProducts} loading={loading} />
                 {pagination && (
                   <Pagination 
                     currentPage={pagination.current_page} 

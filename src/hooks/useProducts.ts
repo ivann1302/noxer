@@ -35,7 +35,9 @@ export const useProducts = (): UseProductsReturn => {
         setMainProducts(data.products);
         setError(null);
       } catch (err) {
+        console.error('Error in useProducts hook:', err);
         setError(err instanceof Error ? err : new Error('Unknown error'));
+        // Note: fetchMainProducts now returns mock data on error, so this catch block should rarely execute
       } finally {
         setLoading(false);
       }
@@ -53,7 +55,9 @@ export const useProducts = (): UseProductsReturn => {
       setPagination(data.pagination);
       setError(null);
     } catch (err) {
+      console.error('Error in fetchProductsWithPagination:', err);
       setError(err instanceof Error ? err : new Error('Unknown error'));
+      // Note: fetchProducts now returns mock data on error, so this catch block should rarely execute
     } finally {
       setLoading(false);
     }

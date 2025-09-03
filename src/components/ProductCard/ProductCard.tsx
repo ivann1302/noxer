@@ -1,4 +1,5 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
+import type { FC } from 'react';
 import type { Product, ProductParameter } from '../../types/product';
 import styles from './ProductCard.module.scss';
 import likeOffIcon from '../../assets/icons/likeOff.svg';
